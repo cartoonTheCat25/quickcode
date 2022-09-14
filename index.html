@@ -162,8 +162,13 @@
         licenseKey: 'your_license_key_goes_here',
         canvas: document.getElementById('deepar-canvas'),
         numberOfFaces: 1,
-        libPath: './lib',
-        segmentationInfoZip: 'segmentation.zip',
+        segmentationInfoZip: './lib/segmentation.zip',
+        footTrackingConfig: {
+          poseEstimationWasm: './lib/libxzimgPoseEstimation.wasm',
+          detector: './lib/foot-detector-android.bin',
+          tracker: './lib/foot-tracker-android.bin',
+          obj: './lib/foot-model.obj',
+        },
         onInitialize: function() {
           // start video immediately after the initalization, mirror = true
           deepAR.startVideo(true);
